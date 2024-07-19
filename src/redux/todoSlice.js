@@ -8,7 +8,7 @@ export const loadTodosAsync = createAsyncThunk('todos/loadTodosAsync', async () 
 
 const todoSlice = createSlice({
   name: 'todos',
-  initialState: JSON.parse(localStorage.getItem('todo')) || [],
+  initialState: [],
   reducers: {
     addTodo: (state, action) => {
       state.push({id: nanoid(), title: action.payload.title, completed: false})
