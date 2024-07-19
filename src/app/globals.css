@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: hsl(237, 14%, 35%);
+  --background-rgb: hsl(0, 0%, 98%);
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: hsl(237, 14%, 35%);
+    --background-rgb: hsl(0, 0%, 98%);
+  }
+} */
+
+h1, h2, h3, h4, h5, h6 {@apply font-bold}
+img{@apply object-cover}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  color: var(--foreground-rgb);
+  background: var(--background-rgb);
+}
+
+.container{@apply max-w-screen-sm mx-auto}
+.accent-bg{@apply bg-gradient-to-r from-accent-left to-accent-right;}
+.bg-image{background: url('../../public/images/bg-mobile-light.jpg') no-repeat top center/cover;}
+/* body:dark */
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@media (width >= 768px){
+  .bg-image{background-image: url('../../public/images/bg-desktop-light.jpg');}
+}
