@@ -56,9 +56,9 @@ export default function Home() {
       </div>
       <div className="px-8">
         <Tabs length={activeTodos.length} config={[
-          {header: 'All', component: <TodoList todos={paginatedTodos} />},
-          {header: 'Active', component: <TodoList todos={activeTodos} />},
-          {header: 'Completed', component: <TodoList todos={completedTodos} />},
+          {header: 'All', component: <TodoList setInput={setInput} input={input} todos={paginatedTodos} />},
+          {header: 'Active', component: <TodoList setInput={setInput} input={input} todos={activeTodos} />},
+          {header: 'Completed', component: <TodoList setInput={setInput} input={input} todos={completedTodos} />},
         ]}/>
       </div>
       {todos.length > itemsPerPage && <Pagination pageNo={pageNo} setPageNo={setPageNo} maxPageNo={maxPageNo} />}
