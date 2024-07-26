@@ -1,15 +1,23 @@
-import { TodoItem } from ".."
+import { TodoItem } from '..';
+import ThemeState from '../ThemeProvider';
 
-const TodoList = ({todos, setInput, input}) => {
-  return (
-    <div className="sm:rounded-b-none transition-all rounded-md bg-white">
-      {todos.map((todo, index) =>
-        <TodoItem setInput={setInput} input={input} key={index} {...todo}
-          className={index === todos.length - 1 ? 'max-sm:border-b-0' : ''}
-        />
-      )}
-    </div>
-  )
-}
+const TodoList = ({ todos, setInput }) => {
+	const { darkMode } = ThemeState();
+	return (
+		<div
+			className={`sm:rounded-b-none transition-all rounded-md ${
+				darkMode ? 'dark:bg-dark-blue-200' : 'bg-white'
+			}`}
+		>
+			{todos.map((todo, index) => (
+				<TodoItem
+					setInput={setInput}
+					key={index}
+					{...todo}
+				/>
+			))}
+		</div>
+	);
+};
 
-export default TodoList
+export default TodoList;

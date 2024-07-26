@@ -1,14 +1,34 @@
-const TabList = ({config, className, activeTab, setActiveTab}) => {
-  return (
-    <div className={`flex gap-4 items-center text-sm text-light-blue-400 ${className}`}>
-      {config.map((entry, index) =>
-        <p onClick={() => setActiveTab(index)} className={`${activeTab === index ? 'text-blue-primary font-bold' : ''}`}
-          key={index}>
-          {entry.header}
-        </p>
-      )}
-    </div>
-  )
-}
+import ThemeState from '../ThemeProvider';
 
-export default TabList
+const TabList = ({ config, className, activeTab, setActiveTab }) => {
+	const { darkMode } = ThemeState();
+	return (
+		<div
+			className={`flex gap-4 items-center max-sm:shadow-sm text-sm ${
+				darkMode
+					? 'dark:bg-dark-blue-200 dark:text-dark-blue-500'
+					: 'text-light-blue-400 bg-white'
+			} ${className}`}
+		>
+			{config.map((entry, index) => (
+				<p
+					onClick={() => setActiveTab(index)}
+					className={`${
+						activeTab === index
+							? 'text-blue-primary font-bold'
+							: `${
+									darkMode
+										? 'hover:dark:text-dark-blue-400'
+										: 'hover:text-light-blue-500'
+							  }`
+					}`}
+					key={index}
+				>
+					{entry.header}
+				</p>
+			))}
+		</div>
+	);
+};
+
+export default TabList;
