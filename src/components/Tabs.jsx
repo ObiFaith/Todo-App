@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { TabList } from '..';
 import { useDispatch } from 'react-redux';
-import { resetTodo } from '../redux/todoSlice';
+import { clearCompleted } from '../redux/todoSlice';
 import { useSelector } from 'react-redux';
 import ThemeState from '../ThemeProvider';
 
@@ -10,6 +10,19 @@ const Tabs = ({ config, length }) => {
 	const { darkMode } = ThemeState();
 	const [activeTab, setActiveTab] = useState(0);
 	const todos = useSelector(state => state.todos);
+	const [isCompleted, setCompleted] = useState(false);
+
+	useEffect(() => {
+		if (todos && todos.length > 0) {
+			const completedTodo = todos.find(todo => todo.completed);
+			if (completedTodo) {
+				setCompleted(completedTodo.completed);
+			} else {
+				setCompleted(false);
+			}
+		}
+	}, [todos]);
+
 	return (
 		<>
 			<div
@@ -30,9 +43,9 @@ const Tabs = ({ config, length }) => {
 					/>
 					<p
 						className="hover:text-dark-blue-300"
-						onClick={() => dispatch(resetTodo())}
+						onClick={() => dispatch(clearCompleted())}
 					>
-						Clear completed
+						{isCompleted && 'Clear completed'}
 					</p>
 				</div>
 			</div>

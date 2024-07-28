@@ -28,7 +28,7 @@ const todoSlice = createSlice({
 		},
 		deleteTodo: (state, action) =>
 			state.filter(todo => todo.id !== action.payload.id),
-		resetTodo: () => [],
+		clearCompleted: state => state.filter(todo => !todo.completed),
 	},
 	extraReducers: builder => {
 		builder.addCase(
@@ -38,6 +38,11 @@ const todoSlice = createSlice({
 	},
 });
 
-export const { addTodo, editTitle, toggleCompleted, deleteTodo, resetTodo } =
-	todoSlice.actions;
+export const {
+	addTodo,
+	editTitle,
+	toggleCompleted,
+	deleteTodo,
+	clearCompleted,
+} = todoSlice.actions;
 export default todoSlice.reducer;
