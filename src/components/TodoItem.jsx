@@ -8,7 +8,7 @@ import {
 import Image from 'next/image';
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { deleteTodo, toggleCompleted } from '../redux/todoSlice';
+import { deleteTodoAsync, toggleCompletedAsync } from '../redux/todoSlice';
 import ThemeState from '../ThemeProvider';
 
 const TodoItem = ({ id, title, completed, className = '', setInput }) => {
@@ -24,7 +24,7 @@ const TodoItem = ({ id, title, completed, className = '', setInput }) => {
 		>
 			<div className="flex gap-3 items-center">
 				<div
-					onClick={() => dispatch(toggleCompleted({ id }))}
+					onClick={() => dispatch(toggleCompletedAsync(id))}
 					className={`border rounded-full cursor-pointer text-center
 						${
 							darkMode
@@ -41,7 +41,7 @@ const TodoItem = ({ id, title, completed, className = '', setInput }) => {
 				<Image
 					onClick={() => {
 						setInput(title);
-						dispatch(deleteTodo({ id }));
+						dispatch(deleteTodoAsync(id));
 					}}
 					width={14}
 					height={14}
@@ -49,10 +49,10 @@ const TodoItem = ({ id, title, completed, className = '', setInput }) => {
 					alt="edit icon"
 				/>
 				<Image
-					onClick={() => dispatch(deleteTodo({ id }))}
+					onClick={() => dispatch(deleteTodoAsync(id))}
 					width={14}
 					height={14}
-					src={darkMode ? icon_delete_dark :icon_delete}
+					src={darkMode ? icon_delete_dark : icon_delete}
 					alt="delete icon"
 				/>
 			</div>
