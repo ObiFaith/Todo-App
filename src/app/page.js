@@ -47,15 +47,15 @@ export default function Home() {
 					</div>
 				</div>
 				<div
-					className={`flex container gap-4 justify-between items-center px-6 text-base py-3 rounded-lg w-full ${
-						darkMode ? 'dark:bg-dark-blue-200' : 'bg-white'
+					className={`flex container gap-4 justify-between items-center px-4 sm:px-6 text-base py-3 rounded-lg w-full ${
+						darkMode ? 'bg-dark-blue-200' : 'bg-white'
 					}`}
 				>
 					<div className="flex gap-2 w-full items-center">
 						<span
 							className={`border p-2 rounded-full text-center ${
 								darkMode
-									? 'dark:border-dark-blue-500'
+									? 'border-dark-blue-500'
 									: 'border-light-blue-300 '
 							}`}
 						></span>
@@ -65,7 +65,7 @@ export default function Home() {
 								onChange={e => setInput(e.target.value)}
 								className={`w-full outline-none pt-1 placeholder:text-light-blue-400 ${
 									darkMode
-										? 'dark:text-light-blue-100 dark:bg-dark-blue-200'
+										? 'text-light-blue-100 bg-dark-blue-200'
 										: 'text-light-blue-500'
 								}`}
 								type="text"

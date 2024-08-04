@@ -27,7 +27,7 @@ const Tabs = ({ config, length }) => {
 		<>
 			<div
 				className={`rounded-lg container relative -top-10 ${
-					darkMode ? 'dark:bg-dark-blue-200' : 'bg-white shadow-sm'
+					darkMode ? 'bg-dark-blue-200' : 'bg-white shadow-sm'
 				}`}
 			>
 				{config[activeTab].component}

@@ -6,7 +6,7 @@ const TodoList = ({ todos, setInput }) => {
 	return (
 		<div
 			className={`sm:rounded-b-none transition-all rounded-md ${
-				darkMode ? 'dark:bg-dark-blue-200' : 'bg-white'
+				darkMode ? 'bg-dark-blue-200' : 'bg-white'
 			}`}
 		>
 			{todos.map((todo, index) => (

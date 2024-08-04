@@ -8,7 +8,7 @@ export const todos = [
 	},
 	{
 		id: nanoid(),
-		title: 'Go through the ThreeJS video in freecodecamp channel on YouTube',
+		title: 'Go through Three.jS video on freecodecamp channel on YouTube',
 		completed: false,
 	},
 	{

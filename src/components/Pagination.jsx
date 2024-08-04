@@ -39,12 +39,12 @@ const Pagination = ({ pageNo, setPageNo, maxPageNo }) => {
 							page === pageNo
 								? `text-white ${
 										darkMode
-											? 'dark:bg-dark-blue-500'
+											? 'bg-dark-blue-500'
 											: 'bg-blue-primary'
 								  }`
 								: `${
 										darkMode
-											? 'dark:bg-dark-blue-200 dark:text-dark-blue-300'
+											? 'bg-dark-blue-200 text-dark-blue-300'
 											: 'text-light-blue-500 bg-white'
 								  }`
 						}`}

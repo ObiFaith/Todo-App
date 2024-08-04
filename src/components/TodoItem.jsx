@@ -16,19 +16,19 @@ const TodoItem = ({ id, title, completed, className = '', setInput }) => {
 	const { darkMode } = ThemeState();
 	return (
 		<div
-			className={`px-6 py-4 flex gap-6 items-center justify-between border-b ${
+			className={`sm:px-6 p-4 flex gap-3 sm:gap-6 items-center justify-between border-b ${
 				darkMode
-					? 'dark:text-light-blue-200 dark:border-dark-blue-500'
+					? 'text-light-blue-200 border-dark-blue-500'
 					: 'border-light-blue-300 text-light-blue-500'
 			} ${className}`}
 		>
-			<div className="flex gap-3 items-center">
+			<div className="flex gap-3 max-sm:gap-2 items-center">
 				<div
 					onClick={() => dispatch(toggleCompletedAsync(id))}
 					className={`border rounded-full cursor-pointer text-center
 						${
 							darkMode
-								? 'dark:border-dark-blue-500 hover:dark:border-dark-blue-300'
+								? 'border-dark-blue-500 hover:border-dark-blue-300'
 								: 'border-light-blue-300'
 						}
           ${completed ? 'accent-bg py-1 px-0.5' : 'p-2'}`}

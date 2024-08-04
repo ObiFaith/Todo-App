@@ -6,7 +6,7 @@ const TabList = ({ config, className, activeTab, setActiveTab }) => {
 		<div
 			className={`flex gap-4 items-center max-sm:shadow-sm text-sm ${
 				darkMode
-					? 'dark:bg-dark-blue-200 dark:text-dark-blue-500'
+					? 'bg-dark-blue-200 text-dark-blue-500'
 					: 'text-light-blue-400 bg-white'
 			} ${className}`}
 		>
@@ -18,7 +18,7 @@ const TabList = ({ config, className, activeTab, setActiveTab }) => {
 							? 'text-blue-primary font-bold'
 							: `${
 									darkMode
-										? 'hover:dark:text-dark-blue-400'
+										? 'hover:text-dark-blue-400'
 										: 'hover:text-light-blue-500'
 							  }`
 					}`}
