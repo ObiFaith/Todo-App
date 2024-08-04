@@ -10,12 +10,12 @@ import { icon_add, icon_add_dark, icon_moon, icon_sun } from '@/public';
 export default function Home() {
 	const dispatch = useDispatch();
 	const [input, setInput] = useState('');
-	const { todos } = useSelector(state => state.todos);
+	const todos = useSelector(state => state.todos);
 	const { darkMode, setDarkMode } = ThemeState();
 
 	useEffect(() => {
 		dispatch(loadTodosAsync());
-	}, []);
+	}, [dispatch]);
 
 	const itemsPerPage = 10;
 	const [pageNo, setPageNo] = useState(1);
@@ -91,46 +91,52 @@ export default function Home() {
 					</span>
 				</div>
 			</div>
-			<div className="px-8">
-				<Tabs
-					length={activeTodos.length}
-					config={[
-						{
-							header: 'All',
-							component: (
-								<TodoList
-									setInput={setInput}
-									todos={paginatedTodos}
-								/>
-							),
-						},
-						{
-							header: 'Active',
-							component: (
-								<TodoList
-									setInput={setInput}
-									todos={activeTodos}
-								/>
-							),
-						},
-						{
-							header: 'Completed',
-							component: (
-								<TodoList
-									setInput={setInput}
-									todos={completedTodos}
-								/>
-							),
-						},
-					]}
-				/>
-			</div>
-			{todos.length > itemsPerPage && (
-				<Pagination
-					pageNo={pageNo}
-					setPageNo={setPageNo}
-					maxPageNo={maxPageNo}
-				/>
+			{todos.length > 0 ? (
+				<>
+					<div className="px-8">
+						<Tabs
+							length={activeTodos.length}
+							config={[
+								{
+									header: 'All',
+									component: (
+										<TodoList
+											setInput={setInput}
+											todos={paginatedTodos}
+										/>
+									),
+								},
+								{
+									header: 'Active',
+									component: (
+										<TodoList
+											setInput={setInput}
+											todos={activeTodos}
+										/>
+									),
+								},
+								{
+									header: 'Completed',
+									component: (
+										<TodoList
+											setInput={setInput}
+											todos={completedTodos}
+										/>
+									),
+								},
+							]}
+						/>
+					</div>
+					{todos.length > itemsPerPage && (
+						<Pagination
+							pageNo={pageNo}
+							setPageNo={setPageNo}
+							maxPageNo={maxPageNo}
+						/>
+					)}
+				</>
+			) : (
+				<div className='text-center py-8'>Loading</div>
 			)}
 		</main>
 	);

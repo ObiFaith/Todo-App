@@ -3,8 +3,8 @@ import { nanoid } from "nanoid";
 export const todos = [
 	{
 		id: nanoid(),
-		title: 'Create the api for my Todo project',
-		completed: false,
+		title: 'Create custom api for my todo project',
+		completed: true,
 	},
 	{
 		id: nanoid(),
