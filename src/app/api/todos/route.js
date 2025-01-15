@@ -39,7 +39,7 @@ export const PATCH = async req => {
 	}
 };
 
-export const PUT = async req => {
+export const PUT = async () => {
 	try {
 		localTodos = localTodos.filter(todo => !todo.completed);
 		return NextResponse.json(localTodos, { status: 200 });

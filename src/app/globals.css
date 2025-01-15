@@ -34,27 +34,3 @@ body {
 		text-wrap: balance;
 	}
 }
-
-/*
-.bg-image {
-	background: url('../../public/images/bg-mobile-light.jpg') no-repeat top
-		center/cover;
-}
-
-@media (width >= 768px) {
-	.bg-image {
-		background-image: url('../../public/images/bg-desktop-light.jpg');
-	}
-}
-@media (prefers-color-scheme: dark) {
-	.bg-image {
-		background: url('../../public/images/bg-mobile-dark.jpg') no-repeat top
-			center/cover;
-	}
-	@media (width >= 768px) {
-		.bg-image {
-			background-image: url('../../public/images/bg-desktop-dark.jpg');
-		}
-	}
-}
- */

@@ -37,7 +37,7 @@ export default function Home() {
 			>
 				<div className="flex items-center pb-10 container justify-between text-white">
 					<h1 className="text-2xl tracking-[1rem]">TODO</h1>
-					<div onClick={() => setDarkMode(prevMode => !prevMode)}>
+					<div className='cursor-pointer' onClick={() => setDarkMode(prevMode => !prevMode)}>
 						<Image
 							width={20}
 							height={20}

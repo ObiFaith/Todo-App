@@ -29,7 +29,7 @@ const TodoItem = ({ id, title, completed, className = '', setInput }) => {
 						${
 							darkMode
 								? 'border-dark-blue-500 hover:border-dark-blue-300'
-								: 'border-light-blue-300'
+								: 'border-light-blue-300 hover:border-dark-blue-500'
 						}
           ${completed ? 'accent-bg py-1 px-0.5' : 'p-2'}`}
 				>
